@@ -1,4 +1,4 @@
-# smartfeed Subscriber Discovery & Experience - UI/UX Specification
+# SmartNews Subscriber Discovery & Experience - UI/UX Specification
 
 **Version**: 1.0
 **Last Updated**: 2025-10-29
@@ -9,7 +9,7 @@
 
 ## Introduction
 
-This document defines the user experience goals, information architecture, user flows, and visual design specifications for smartfeed's **Subscriber Discovery & Experience** interface. It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience.
+This document defines the user experience goals, information architecture, user flows, and visual design specifications for SmartNews's **Subscriber Discovery & Experience** interface. It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience.
 
 **Scope**: This specification covers the subscriber-facing features including:
 
@@ -39,7 +39,7 @@ The subscriber experience is intentionally simplified compared to the creator si
 
 **1. Curious Browser (Unauthenticated)**
 
-- **Profile**: First-time visitor exploring what smartfeed offers
+- **Profile**: First-time visitor exploring what SmartNews offers
 - **Goals**: Quickly assess feed quality without signing up; understand value proposition
 - **Pain Points**: Doesn't want to create an account just to "look around"
 - **Success Criteria**: Can browse all public feeds, preview content, understand creator value within 2 minutes
@@ -759,19 +759,19 @@ graph TD
 
 ### Design System Approach
 
-**Foundation**: shadcn/ui components with smartfeed customizations
+**Foundation**: shadcn/ui components with SmartNews customizations
 
 **Customization Strategy**:
 
 1. **Start with shadcn blocks** - Use `login-02`, `dashboard-01` as structural templates
-2. **Extend with variants** - Add smartfeed-specific variants (e.g., feed card, subscription card)
+2. **Extend with variants** - Add smartnews-specific variants (e.g., feed card, subscription card)
 3. **Maintain accessibility** - Preserve shadcn's built-in ARIA attributes and keyboard navigation
 4. **Color system**: Use only CSS variables from `globals.css` (see Branding section)
 
 **Component Sources**:
 
 - **Base components**: shadcn/ui (via MCP)
-- **Custom compositions**: smartfeed-specific (documented below)
+- **Custom compositions**: smartnews-specific (documented below)
 - **Icons**: Lucide React (bundled with shadcn)
 
 ---
@@ -1071,7 +1071,7 @@ graph TD
 
 ### Visual Identity
 
-**Brand Guidelines**: smartfeed uses a clean, modern aesthetic with focus on content readability
+**Brand Guidelines**: SmartNews uses a clean, modern aesthetic with focus on content readability
 
 **Design Language**:
 

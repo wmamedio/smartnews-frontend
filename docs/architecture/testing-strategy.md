@@ -2,7 +2,7 @@
 
 ## Overview
 
-smartfeed employs a comprehensive testing strategy with **mandatory End-to-End (E2E) testing** for all user-facing features using Playwright. This document outlines our testing approach, requirements, and best practices.
+SmartNews employs a comprehensive testing strategy with **mandatory End-to-End (E2E) testing** for all user-facing features using Playwright. This document outlines our testing approach, requirements, and best practices.
 
 ---
 
@@ -715,6 +715,6 @@ _Future Enhancement_: E2E tests will be integrated into CI/CD pipeline
 
 ## Summary
 
-**E2E testing is not optional** - it's a core requirement for quality delivery in the smartfeed project. Every user-facing feature must have comprehensive E2E tests that prove real users can successfully complete critical workflows.
+**E2E testing is not optional** - it's a core requirement for quality delivery in the SmartNews project. Every user-facing feature must have comprehensive E2E tests that prove real users can successfully complete critical workflows.
 
 **Dev agents create tests. QA agents verify tests. Users benefit from reliable software.**

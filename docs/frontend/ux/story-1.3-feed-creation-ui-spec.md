@@ -26,11 +26,11 @@
 
 ## Introduction
 
-This document defines the user experience goals, information architecture, user flows, and visual design specifications for **smartfeed Feed Creation & Publication System**'s user interface. It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience.
+This document defines the user experience goals, information architecture, user flows, and visual design specifications for **SmartNews Feed Creation & Publication System**'s user interface. It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience.
 
 ### Purpose & Scope
 
-The Feed Creation System is the **core creative tool** for approved smartfeed creators. It enables them to:
+The Feed Creation System is the **core creative tool** for approved SmartNews creators. It enables them to:
 
 - **Create feeds** through an intuitive multi-step wizard
 - **Curate content** by selecting items from their content library
@@ -59,7 +59,7 @@ Based on Story 1.3 requirements, creators need:
 
 ### Design System Foundation
 
-This specification builds on **smartfeed's existing design system**:
+This specification builds on **SmartNews's existing design system**:
 
 - **UI Framework**: shadcn/ui components and blocks
 - **Color System**: Variables from `globals.css` (no new colors)
@@ -928,7 +928,7 @@ graph TD
 - Builder interface with all interactions
 - Mobile/tablet responsive variants
 
-**Design System Base**: All wireframes use shadcn/ui components as foundation. Refer to existing smartfeed component library in `/docs/frontend/components/shadcn-components.md`.
+**Design System Base**: All wireframes use shadcn/ui components as foundation. Refer to existing SmartNews component library in `/docs/frontend/components/shadcn-components.md`.
 
 ---
 

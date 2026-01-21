@@ -795,4 +795,4 @@ This E2E testing framework makes quality assurance **systematic and non-negotiab
 
 **Version**: 1.0
 **Last Updated**: 2025-10-17
-**Project**: smartfeed (reference implementation)
+**Project**: SmartNews (reference implementation)

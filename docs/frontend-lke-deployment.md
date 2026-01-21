@@ -1,15 +1,15 @@
-# smartfeed Admin UI - LKE Deployment Guide
+# SmartNews Admin UI - LKE Deployment Guide
 ## Adding Frontend to Existing Kubernetes Cluster
 
-This guide shows how to add the smartfeed Admin UI (Next.js frontend) to your existing LKE cluster alongside your backend API while maintaining **complete deployment independence**.
+This guide shows how to add the SmartNews Admin UI (Next.js frontend) to your existing LKE cluster alongside your backend API while maintaining **complete deployment independence**.
 
 ---
 
 ## Overview
 
 **Architecture Approach:**
-- **Shared Cluster**: Use your existing LKE cluster (`smartfeed-production`)
-- **Separate Namespace**: Frontend gets its own namespace (`smartfeed-frontend-prod`)
+- **Shared Cluster**: Use your existing LKE cluster (`smartnews-production`)
+- **Separate Namespace**: Frontend gets its own namespace (`smartnews-frontend-prod`)
 - **Independent Deployments**: Frontend and backend deploy separately via different GitLab repos
 - **External API Communication**: Frontend connects to `https://localhost:8000`
 - **Complete Isolation**: No shared resources, configs, or deployment dependencies
@@ -31,7 +31,7 @@ This guide shows how to add the smartfeed Admin UI (Next.js frontend) to your ex
 - Domain for frontend (e.g., `admin.smartnews.example`)
 
 **Existing Infrastructure (Already Working):**
-- LKE cluster with backend in `smartfeed-prod` namespace
+- LKE cluster with backend in `smartnews-prod` namespace
 - Backend API accessible at `https://localhost:8000`
 - NGINX Ingress Controller (already installed)
 - cert-manager for SSL (already configured)
@@ -53,7 +53,7 @@ The `k8s-production.yaml` file is already created and ready to use. You just nee
 
 2. **Image Repository** (line 70):
    ```yaml
-   image: registry.gitlab.com/your-actual-group/smartfeed_admin_ui:latest
+   image: registry.gitlab.com/your-actual-group/smartnews_admin_ui:latest
    ```
 
 3. **Domain** (line 139):
@@ -89,7 +89,7 @@ echo -n "DEPLOY_TOKEN_USERNAME:DEPLOY_TOKEN_PASSWORD" | base64
 Create/update `.gitlab-ci.yml` in your frontend repo:
 
 ```yaml
-# .gitlab-ci.yml for smartfeed Admin UI
+# .gitlab-ci.yml for SmartNews Admin UI
 image: node:18-alpine
 
 stages:
@@ -100,7 +100,7 @@ stages:
 variables:
   DOCKER_DRIVER: overlay2
   DOCKER_TLS_CERTDIR: "/certs"
-  FRONTEND_NAMESPACE: "smartfeed-frontend-prod"
+  FRONTEND_NAMESPACE: "smartnews-frontend-prod"
 
 cache:
   paths:
@@ -179,15 +179,15 @@ deploy-production:
     - kubectl apply -f k8s-production-deploy.yaml
     
     # Wait for deployment to complete
-    - kubectl rollout status deployment/smartfeed-admin-ui -n $FRONTEND_NAMESPACE --timeout=600s
+    - kubectl rollout status deployment/smartnews-admin-ui -n $FRONTEND_NAMESPACE --timeout=600s
     
     # Verify deployment
-    - kubectl get pods -n $FRONTEND_NAMESPACE -l app=smartfeed-admin-ui
+    - kubectl get pods -n $FRONTEND_NAMESPACE -l app=smartnews-admin-ui
     - kubectl get ingress -n $FRONTEND_NAMESPACE
     
     # Test frontend health
     - sleep 30
-    - kubectl run connectivity-test --image=curlimages/curl:latest --rm -it --restart=Never -n $FRONTEND_NAMESPACE -- curl -f http://smartfeed-admin-ui-service.smartfeed-frontend-prod.svc.cluster.local || echo "Health check completed"
+    - kubectl run connectivity-test --image=curlimages/curl:latest --rm -it --restart=Never -n $FRONTEND_NAMESPACE -- curl -f http://smartnews-admin-ui-service.smartnews-frontend-prod.svc.cluster.local || echo "Health check completed"
   environment:
     name: production
     url: https://localhost:3000
@@ -204,9 +204,9 @@ rollback-production:
     - echo "$KUBE_CONFIG_BASE64" | base64 -d > ~/.kube/config
     - chmod 600 ~/.kube/config
   script:
-    - kubectl rollout undo deployment/smartfeed-admin-ui -n $FRONTEND_NAMESPACE
-    - kubectl rollout status deployment/smartfeed-admin-ui -n $FRONTEND_NAMESPACE --timeout=300s
-    - kubectl get pods -n $FRONTEND_NAMESPACE -l app=smartfeed-admin-ui
+    - kubectl rollout undo deployment/smartnews-admin-ui -n $FRONTEND_NAMESPACE
+    - kubectl rollout status deployment/smartnews-admin-ui -n $FRONTEND_NAMESPACE --timeout=300s
+    - kubectl get pods -n $FRONTEND_NAMESPACE -l app=smartnews-admin-ui
   environment:
     name: production
     url: https://localhost:3000
@@ -229,7 +229,7 @@ Navigate to your **frontend** GitLab project → **Settings** → **CI/CD** → 
 
 ```bash
 # Use your existing kubeconfig from backend setup
-cat /path/to/smartfeed-production-kubeconfig.yaml | base64 -w 0
+cat /path/to/smartnews-production-kubeconfig.yaml | base64 -w 0
 ```
 
 **Note**: You can reuse the same kubeconfig from your backend project since it's the same cluster, just different namespaces.
@@ -262,10 +262,10 @@ admin.smartnews.example   -> 192.168.1.100  (new frontend)
 
 ```bash
 # 1. Connect to your existing cluster
-export KUBECONFIG=/path/to/smartfeed-production-kubeconfig.yaml
+export KUBECONFIG=/path/to/smartnews-production-kubeconfig.yaml
 
 # 2. Verify cluster access and check backend is running
-kubectl get pods -n smartfeed-prod
+kubectl get pods -n smartnews-prod
 
 # 3. Update k8s-production.yaml with your actual values:
 #    - GitLab registry credentials
@@ -276,7 +276,7 @@ kubectl get pods -n smartfeed-prod
 kubectl apply -f k8s-production.yaml
 
 # 5. Check deployment status
-kubectl get pods -n smartfeed-frontend-prod -w
+kubectl get pods -n smartnews-frontend-prod -w
 ```
 
 ### GitLab Pipeline Deployment
@@ -300,14 +300,14 @@ git push origin main
 
 ```bash
 # Verify frontend is running
-kubectl get all -n smartfeed-frontend-prod
+kubectl get all -n smartnews-frontend-prod
 
 # Verify backend is still running (should be unaffected)
-kubectl get all -n smartfeed-prod
+kubectl get all -n smartnews-prod
 
 # Check ingress and SSL
-kubectl get ingress -n smartfeed-frontend-prod
-kubectl get certificates -n smartfeed-frontend-prod
+kubectl get ingress -n smartnews-frontend-prod
+kubectl get certificates -n smartnews-frontend-prod
 ```
 
 ### Test Application
@@ -327,16 +327,16 @@ curl https://localhost:8000/health
 
 ```bash
 # Scale frontend independently
-kubectl scale deployment/smartfeed-admin-ui --replicas=3 -n smartfeed-frontend-prod
+kubectl scale deployment/smartnews-admin-ui --replicas=3 -n smartnews-frontend-prod
 
 # Scale backend independently (no impact on frontend)
-kubectl scale deployment/backend --replicas=4 -n smartfeed-prod
+kubectl scale deployment/backend --replicas=4 -n smartnews-prod
 
 # Deploy frontend independently
-kubectl rollout restart deployment/smartfeed-admin-ui -n smartfeed-frontend-prod
+kubectl rollout restart deployment/smartnews-admin-ui -n smartnews-frontend-prod
 
 # Deploy backend independently (no impact on frontend)
-kubectl rollout restart deployment/backend -n smartfeed-prod
+kubectl rollout restart deployment/backend -n smartnews-prod
 ```
 
 ---
@@ -349,10 +349,10 @@ kubectl rollout restart deployment/backend -n smartfeed-prod
 
 ```bash
 # Check pod status
-kubectl describe pod -n smartfeed-frontend-prod -l app=smartfeed-admin-ui
+kubectl describe pod -n smartnews-frontend-prod -l app=smartnews-admin-ui
 
 # Check logs
-kubectl logs -n smartfeed-frontend-prod -l app=smartfeed-admin-ui
+kubectl logs -n smartnews-frontend-prod -l app=smartnews-admin-ui
 
 # Common causes:
 # - Image pull issues (check registry credentials in k8s-production.yaml)
@@ -367,23 +367,23 @@ kubectl logs -n smartfeed-frontend-prod -l app=smartfeed-admin-ui
 docker login registry.gitlab.com
 
 # Check image exists
-docker pull registry.gitlab.com/your-group/smartfeed_admin_ui:latest
+docker pull registry.gitlab.com/your-group/smartnews_admin_ui:latest
 
 # Verify registry secret
-kubectl get secret gitlab-registry-frontend -n smartfeed-frontend-prod -o yaml
+kubectl get secret gitlab-registry-frontend -n smartnews-frontend-prod -o yaml
 ```
 
 #### SSL Certificate Issues
 
 ```bash
 # Check certificate status
-kubectl describe certificate smartfeed-admin-ui-tls -n smartfeed-frontend-prod
+kubectl describe certificate smartnews-admin-ui-tls -n smartnews-frontend-prod
 
 # Check cert-manager logs (uses existing cert-manager from backend setup)
 kubectl logs -n cert-manager deployment/cert-manager
 
 # Force certificate renewal
-kubectl delete certificate smartfeed-admin-ui-tls -n smartfeed-frontend-prod
+kubectl delete certificate smartnews-admin-ui-tls -n smartnews-frontend-prod
 kubectl apply -f k8s-production.yaml
 ```
 
@@ -391,7 +391,7 @@ kubectl apply -f k8s-production.yaml
 
 ```bash
 # Test API connectivity from frontend pod
-kubectl exec -it deployment/smartfeed-admin-ui -n smartfeed-frontend-prod -- sh
+kubectl exec -it deployment/smartnews-admin-ui -n smartnews-frontend-prod -- sh
 
 # Inside the pod:
 curl https://localhost:8000/health
@@ -405,19 +405,19 @@ nslookup api.smartnews.example
 
 ```bash
 # Check all frontend resources
-kubectl get all -n smartfeed-frontend-prod
+kubectl get all -n smartnews-frontend-prod
 
 # View ingress details
-kubectl describe ingress smartfeed-admin-ui-ingress -n smartfeed-frontend-prod
+kubectl describe ingress smartnews-admin-ui-ingress -n smartnews-frontend-prod
 
 # Monitor deployment progress
-kubectl rollout status deployment/smartfeed-admin-ui -n smartfeed-frontend-prod -w
+kubectl rollout status deployment/smartnews-admin-ui -n smartnews-frontend-prod -w
 
 # Check events for issues
-kubectl get events -n smartfeed-frontend-prod --sort-by='.lastTimestamp'
+kubectl get events -n smartnews-frontend-prod --sort-by='.lastTimestamp'
 
 # View container logs
-kubectl logs -f deployment/smartfeed-admin-ui -n smartfeed-frontend-prod
+kubectl logs -f deployment/smartnews-admin-ui -n smartnews-frontend-prod
 ```
 
 ---
@@ -429,30 +429,30 @@ kubectl logs -f deployment/smartfeed-admin-ui -n smartfeed-frontend-prod
 ```bash
 # Frontend deployment (completely independent)
 kubectl apply -f k8s-production.yaml
-kubectl rollout restart deployment/smartfeed-admin-ui -n smartfeed-frontend-prod
+kubectl rollout restart deployment/smartnews-admin-ui -n smartnews-frontend-prod
 
 # Backend deployment (completely independent)
-kubectl rollout restart deployment/backend -n smartfeed-prod
+kubectl rollout restart deployment/backend -n smartnews-prod
 ```
 
 ### Separate Resources ✅
 
 ```bash
 # Frontend resources
-kubectl get all -n smartfeed-frontend-prod
+kubectl get all -n smartnews-frontend-prod
 
 # Backend resources (completely separate)
-kubectl get all -n smartfeed-prod
+kubectl get all -n smartnews-prod
 ```
 
 ### Separate Scaling ✅
 
 ```bash
 # Scale frontend based on web traffic
-kubectl scale deployment/smartfeed-admin-ui --replicas=5 -n smartfeed-frontend-prod
+kubectl scale deployment/smartnews-admin-ui --replicas=5 -n smartnews-frontend-prod
 
 # Scale backend based on API load (independent)
-kubectl scale deployment/backend --replicas=3 -n smartfeed-prod
+kubectl scale deployment/backend --replicas=3 -n smartnews-prod
 ```
 
 ### Separate Pipelines ✅

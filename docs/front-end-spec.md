@@ -1,8 +1,8 @@
-# smartfeed Admin UI - UI/UX Specification
+# SmartNews Admin UI - UI/UX Specification
 
 ## Introduction
 
-This document defines the user experience goals, information architecture, user flows, and visual design specifications for smartfeed Admin UI's user interface. It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience.
+This document defines the user experience goals, information architecture, user flows, and visual design specifications for SmartNews Admin UI's user interface. It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience.
 
 ### Overall UX Goals & Principles
 
@@ -308,7 +308,7 @@ graph LR
 
 ## Wireframes & Mockups
 
-**Primary Design Files:** [Figma - smartfeed Design System](https://figma.com/smartfeed-ui)
+**Primary Design Files:** [Figma - SmartNews Design System](https://figma.com/smartnews-ui)
 
 ### Key Screen Layouts
 
@@ -380,7 +380,7 @@ graph LR
 
 ## Component Library / Design System
 
-**Design System Approach:** Extend shadcn/ui components with smartfeed-specific variants and patterns. Maintain consistency with shadcn's design philosophy while adding platform-specific components.
+**Design System Approach:** Extend shadcn/ui components with smartnews-specific variants and patterns. Maintain consistency with shadcn's design philosophy while adding platform-specific components.
 
 ### Core Components
 
@@ -474,7 +474,7 @@ graph LR
 
 ### Visual Identity
 
-**Brand Guidelines:** smartfeed maintains a professional yet approachable aesthetic, balancing creator creativity with subscriber trust.
+**Brand Guidelines:** SmartNews maintains a professional yet approachable aesthetic, balancing creator creativity with subscriber trust.
 
 ### Color Palette
 

@@ -9,10 +9,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "smartfeed - Content Curation Platform",
-  description: "Curate, monetize, and share your content expertise with smartfeed",
+  title: "SmartNews - Content Curation Platform",
+  description: "Curate, monetize, and share your content expertise with SmartNews",
   keywords: ["content curation", "newsletter", "creator economy", "content monetization"],
-  authors: [{ name: "smartfeed" }],
+  authors: [{ name: "SmartNews" }],
   icons: {
     icon: [
       { url: "/logo/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   manifest: "/logo/favicon/site.webmanifest",
   openGraph: {
-    title: "smartfeed - Content Curation Platform",
+    title: "SmartNews - Content Curation Platform",
     description: "Curate, monetize, and share your content expertise",
     type: "website",
     url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",

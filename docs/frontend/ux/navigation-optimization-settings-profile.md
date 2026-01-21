@@ -544,7 +544,7 @@ export default function SettingsPage() {
 
 ```
 ┌─────────────────────┐
-│  smartfeed Logo      │
+│  SmartNews Logo      │
 ├─────────────────────┤
 │ □ Dashboard         │
 │ □ Content           │

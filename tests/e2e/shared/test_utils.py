@@ -62,7 +62,7 @@ def generate_unique_email(prefix: str = "test") -> str:
     """Generate a unique test email with timestamp and random string"""
     timestamp = int(time.time())
     random_str = ''.join(random.choices(string.ascii_lowercase, k=4))
-    return f"{prefix}.{timestamp}.{random_str}@smartfeed-test.com"
+    return f"{prefix}.{timestamp}.{random_str}@smartnews-test.com"
 
 def generate_unique_username(prefix: str = "user") -> str:
     """Generate a unique username"""

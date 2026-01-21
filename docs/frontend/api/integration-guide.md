@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide provides comprehensive documentation for integrating the smartfeed frontend with the FastAPI backend located at `https://localhost:8000/`.
+This guide provides comprehensive documentation for integrating the SmartNews frontend with the FastAPI backend located at `https://localhost:8000/`.
 
 ## API Configuration
 

@@ -1,8 +1,8 @@
-# Coding Standards - smartfeed Frontend
+# Coding Standards - SmartNews Frontend
 
 ## Overview
 
-This document defines the coding standards, best practices, and quality requirements for the smartfeed frontend codebase. All developers must adhere to these standards to ensure consistency, maintainability, and quality.
+This document defines the coding standards, best practices, and quality requirements for the SmartNews frontend codebase. All developers must adhere to these standards to ensure consistency, maintainability, and quality.
 
 ---
 
@@ -678,7 +678,7 @@ function validateFeedData(data: unknown): FeedData {
 
 ### Resources
 
-- [Frontend README](/Users/weverson/GroDigital/smartfeed_admin_ui/docs/frontend/README.md)
-- [Tech Stack Details](/Users/weverson/GroDigital/smartfeed_admin_ui/docs/architecture/tech-stack.md)
-- [Project Structure](/Users/weverson/GroDigital/smartfeed_admin_ui/docs/architecture/source-tree.md)
+- [Frontend README](/Users/weverson/GroDigital/smartnews_admin_ui/docs/frontend/README.md)
+- [Tech Stack Details](/Users/weverson/GroDigital/smartnews_admin_ui/docs/architecture/tech-stack.md)
+- [Project Structure](/Users/weverson/GroDigital/smartnews_admin_ui/docs/architecture/source-tree.md)
 - [API Documentation](https://localhost:8000/docs)

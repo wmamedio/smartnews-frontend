@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document maps smartfeed features to specific shadcn/ui components and blocks, ensuring consistent UI implementation across the application.
+This document maps SmartNews features to specific shadcn/ui components and blocks, ensuring consistent UI implementation across the application.
 
 ## Installation & Setup
 
@@ -26,7 +26,7 @@ npx shadcn@latest init
 ### Required Components
 
 ```bash
-# Core components needed for smartfeed
+# Core components needed for SmartNews
 npx shadcn@latest add alert
 npx shadcn@latest add avatar
 npx shadcn@latest add badge
@@ -375,7 +375,7 @@ const form = useForm({
     --foreground: 222.2 84% 4.9%;
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-    /* Add custom colors for smartfeed */
+    /* Add custom colors for SmartNews */
     --creator: 142 76% 36%;
     --subscriber: 217 91% 60%;
   }

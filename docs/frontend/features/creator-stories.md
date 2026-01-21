@@ -24,8 +24,8 @@
 // app/(auth)/register/page.tsx
 <Card>
   <CardHeader>
-    <CardTitle>Join smartfeed</CardTitle>
-    <CardDescription>Choose how you want to use smartfeed</CardDescription>
+    <CardTitle>Join SmartNews</CardTitle>
+    <CardDescription>Choose how you want to use SmartNews</CardDescription>
   </CardHeader>
   <CardContent>
     <RadioGroup value={role} onValueChange={setRole}>

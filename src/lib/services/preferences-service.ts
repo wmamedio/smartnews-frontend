@@ -39,7 +39,7 @@ const DEFAULT_PREFERENCES: UserPreferences = {
 };
 
 // localStorage keys
-const STORAGE_KEY = "smartfeed_user_preferences";
+const STORAGE_KEY = "smartnews_user_preferences";
 
 /**
  * Get preferences from localStorage

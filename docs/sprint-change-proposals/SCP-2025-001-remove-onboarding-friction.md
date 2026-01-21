@@ -269,7 +269,7 @@ Registration flow changed to eliminate onboarding friction. Creators now go dire
 If repurposing:
 
 1. Remove auto-redirect after completion
-2. Change header: "Welcome to smartfeed" → "Complete Your Profile"
+2. Change header: "Welcome to SmartNews" → "Complete Your Profile"
 3. Remove mandatory flow indicators (progress suggesting required steps)
 4. Add "Save" and "Save & Continue" buttons
 5. Make all steps optional and independently accessible

@@ -60,7 +60,7 @@ const config = {
     },
     testimonial: {
       quote:
-        "smartfeed has transformed how I share content with my audience. The revenue model is transparent and fair, and I love having control over my content curation.",
+        "SmartNews has transformed how I share content with my audience. The revenue model is transparent and fair, and I love having control over my content curation.",
       author: "Sofia Davis - Content Creator",
     },
   },
@@ -73,7 +73,7 @@ const config = {
     },
     testimonial: {
       quote:
-        "Subscribing to curated feeds on smartfeed has saved me hours of scrolling. I now get the best content from my favorite creators delivered right to my inbox.",
+        "Subscribing to curated feeds on SmartNews has saved me hours of scrolling. I now get the best content from my favorite creators delivered right to my inbox.",
       author: "Alex Johnson - Subscriber",
     },
   },

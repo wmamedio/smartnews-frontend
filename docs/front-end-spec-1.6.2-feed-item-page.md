@@ -1,4 +1,4 @@
-# smartfeed - Public Feed Item Detail Page UI/UX Specification
+# SmartNews - Public Feed Item Detail Page UI/UX Specification
 
 **Story**: 1.6.2 - Frontend - Public Feed Item Detail Page
 **Version**: 1.0
@@ -9,7 +9,7 @@
 
 ## 1. Introduction
 
-This document defines the user experience goals, information architecture, user flows, and visual design specifications for **smartfeed's Public Feed Item Detail Page** (Story 1.6.2). It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience for individual feed item pages.
+This document defines the user experience goals, information architecture, user flows, and visual design specifications for **SmartNews's Public Feed Item Detail Page** (Story 1.6.2). It serves as the foundation for visual design and frontend development, ensuring a cohesive and user-centered experience for individual feed item pages.
 
 ### 1.1 Overall UX Goals & Principles
 
@@ -51,7 +51,7 @@ This document defines the user experience goals, information architecture, user 
 
 ```mermaid
 graph TD
-    A[smartfeed Public] --> B[/discover]
+    A[SmartNews Public] --> B[/discover]
     A --> C[/feed/slug]
     C --> D[/feed/slug/item-slug]
 
@@ -250,7 +250,7 @@ graph TD
 **Layout:**
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  [Logo]              smartfeed              [User Menu]          │
+│  [Logo]              SmartNews              [User Menu]          │
 ├─────────────────────────────────────────────────────────────────┤
 │  Home > Tech Weekly > AI Revolution 2025                        │
 ├───────────────────────────────────┬─────────────────────────────┤
@@ -303,7 +303,7 @@ graph TD
 **Layout:**
 ```
 ┌─────────────────────────┐
-│  [≡]  smartfeed  [User]  │
+│  [≡]  SmartNews  [User]  │
 ├─────────────────────────┤
 │  ← Back to Tech Weekly  │
 ├─────────────────────────┤
@@ -558,7 +558,7 @@ graph TD
 
 ### 6.1 Visual Identity
 
-**Brand Guidelines:** Use existing smartfeed design tokens from `globals.css`
+**Brand Guidelines:** Use existing SmartNews design tokens from `globals.css`
 
 ### 6.2 Color Palette
 

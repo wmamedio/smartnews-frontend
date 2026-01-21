@@ -8,7 +8,7 @@
 
 ## 1. Introduction
 
-This document defines the user experience goals, component structure, interaction patterns, and visual specifications **specifically for the Revenue Attribution & Tracking Dashboard** for smartfeed creators.
+This document defines the user experience goals, component structure, interaction patterns, and visual specifications **specifically for the Revenue Attribution & Tracking Dashboard** for SmartNews creators.
 
 **Scope**: This spec covers only the revenue dashboard features outlined in Story 1.4. For general frontend architecture, authentication flows, and shared components, refer to `/docs/frontend/README.md`.
 

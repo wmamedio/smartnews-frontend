@@ -1,8 +1,8 @@
-# smartfeed Frontend Documentation
+# SmartNews Frontend Documentation
 
 ## Overview
 
-smartfeed frontend is a Next.js 15+ application providing interfaces for two primary user types:
+SmartNews frontend is a Next.js 15+ application providing interfaces for two primary user types:
 
 - **Creators**: Content curators who create feeds and earn revenue
 - **Subscribers**: Users who discover and consume content feeds
@@ -223,7 +223,7 @@ mcp shadcn add "@shadcn/component-name"
 2. **Block Discovery** → Find the closest match to your UI needs
 3. **View & Analyze** → Examine the block structure and code
 4. **Install & Implement** → Use exact block structure as foundation
-5. **Extend & Customize** → Add smartfeed-specific logic and styling
+5. **Extend & Customize** → Add smartnews-specific logic and styling
 6. **Never Start From Scratch** → Always build on shadcn foundation
 
 ### Code Example Standards
@@ -272,7 +272,7 @@ Before submitting any UI code, verify:
 - [ ] **Structure Preserved**: Original shadcn structure maintained
 - [ ] **MCP Used**: Searched shadcn MCP for relevant components
 - [ ] **No Custom UI**: No custom layouts built from scratch
-- [ ] **Proper Extensions**: smartfeed features added to shadcn foundation
+- [ ] **Proper Extensions**: SmartNews features added to shadcn foundation
 - [ ] **Consistent Styling**: Uses shadcn CSS variables and classes
 - [ ] **Accessibility**: Maintains shadcn accessibility features
 

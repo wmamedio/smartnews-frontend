@@ -1,6 +1,6 @@
 # PO Master Checklist Validation Report
 
-## smartfeed MVP - Post Story 1.1 Completion
+## SmartNews MVP - Post Story 1.1 Completion
 
 **Date:** 2025-09-30
 **Project Owner:** Sarah

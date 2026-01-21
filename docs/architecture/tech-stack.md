@@ -1,8 +1,8 @@
-# Technology Stack - smartfeed Frontend
+# Technology Stack - SmartNews Frontend
 
 ## Overview
 
-Complete technology stack documentation for the smartfeed frontend application. This document serves as the single source of truth for all technologies, libraries, and tools used in the project.
+Complete technology stack documentation for the SmartNews frontend application. This document serves as the single source of truth for all technologies, libraries, and tools used in the project.
 
 ---
 
@@ -775,7 +775,7 @@ CMD ["node", "server.js"]
 ```bash
 # Clone repository
 git clone <repository-url>
-cd smartfeed_admin_ui
+cd smartnews_admin_ui
 
 # Install dependencies
 npm install
@@ -830,8 +830,8 @@ npm run test:watch   # Run tests in watch mode
 npm run test:coverage # Generate coverage report
 
 # Docker Build
-docker build -t smartfeed-frontend .
-docker run -p 3000:3000 smartfeed-frontend
+docker build -t smartnews-frontend .
+docker run -p 3000:3000 smartnews-frontend
 ```
 
 ---

@@ -2,7 +2,7 @@
 
 ## Overview
 
-smartfeed uses JWT-based authentication with user_type-based access control for creators and subscribers. The authentication system supports both traditional email/password login and social media OAuth.
+SmartNews uses JWT-based authentication with user_type-based access control for creators and subscribers. The authentication system supports both traditional email/password login and social media OAuth.
 
 ## Authentication Architecture
 

@@ -1,4 +1,4 @@
-# smartfeed Project Instructions
+# SmartNews Project Instructions
 
 ## API & Environment
 

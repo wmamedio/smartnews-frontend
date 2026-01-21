@@ -1,4 +1,4 @@
-# smartfeed Frontend Setup Guide
+# SmartNews Frontend Setup Guide
 
 ## Prerequisites
 
@@ -13,10 +13,10 @@
 
 ```bash
 # Create new Next.js project
-npx create-next-app@latest smartfeed-frontend --typescript --tailwind --app
+npx create-next-app@latest smartnews-frontend --typescript --tailwind --app
 
 # Navigate to project
-cd smartfeed-frontend
+cd smartnews-frontend
 ```
 
 ### 2. Install shadcn/ui
@@ -265,7 +265,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'smartfeed - Content Curation Platform',
+  title: 'SmartNews - Content Curation Platform',
   description: 'Monetize your content curation',
 };
 
@@ -301,7 +301,7 @@ export default function HomePage() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-4 text-center">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-            Welcome to smartfeed
+            Welcome to SmartNews
           </h1>
           <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl">
             Monetize your content curation. Join as a creator or discover amazing feeds.
@@ -427,8 +427,8 @@ CMD ["node", "server.js"]
 Build and run:
 
 ```bash
-docker build -t smartfeed-frontend .
-docker run -p 3000:3000 smartfeed-frontend
+docker build -t smartnews-frontend .
+docker run -p 3000:3000 smartnews-frontend
 ```
 
 ## Next Steps

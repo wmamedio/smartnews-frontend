@@ -66,7 +66,7 @@ def fetch_youtube_video_urls(channel_rss_url: str, max_urls: int = 15) -> list:
         # Fetch the RSS feed
         req = urllib.request.Request(
             channel_rss_url,
-            headers={'User-Agent': 'Mozilla/5.0 (compatible; smartfeed E2E Test)'}
+            headers={'User-Agent': 'Mozilla/5.0 (compatible; SmartNews E2E Test)'}
         )
         with urllib.request.urlopen(req, timeout=10, context=ssl_context) as response:
             xml_content = response.read().decode('utf-8')

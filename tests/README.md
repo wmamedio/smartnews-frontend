@@ -1,6 +1,6 @@
-# smartfeed E2E Tests
+# SmartNews E2E Tests
 
-This directory contains End-to-End (E2E) tests for the smartfeed application using Playwright.
+This directory contains End-to-End (E2E) tests for the SmartNews application using Playwright.
 
 ---
 

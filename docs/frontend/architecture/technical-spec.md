@@ -1,4 +1,4 @@
-# smartfeed Frontend Technical Specification
+# SmartNews Frontend Technical Specification
 
 ## 1. Technology Requirements
 
@@ -460,10 +460,10 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 ```bash
 # 1. Create Next.js project
-npx create-next-app@latest smartfeed --typescript --tailwind --app --no-src-dir
+npx create-next-app@latest SmartNews --typescript --tailwind --app --no-src-dir
 
 # 2. Install dependencies
-cd smartfeed
+cd SmartNews
 pnpm add axios react-hook-form @hookform/resolvers zod \
   class-variance-authority clsx tailwind-merge lucide-react
 

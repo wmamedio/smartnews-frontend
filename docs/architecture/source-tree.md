@@ -1,15 +1,15 @@
-# Source Tree - smartfeed Frontend
+# Source Tree - SmartNews Frontend
 
 ## Overview
 
-Complete documentation of the smartfeed frontend project structure. This file serves as a map for navigating the codebase and understanding file organization.
+Complete documentation of the SmartNews frontend project structure. This file serves as a map for navigating the codebase and understanding file organization.
 
 ---
 
 ## Project Root Structure
 
 ```
-smartfeed_admin_ui/
+smartnews_admin_ui/
 ├── .bmad-core/              # BMAD agent configurations
 ├── .next/                   # Next.js build output (generated)
 ├── docs/                    # Project documentation
@@ -616,6 +616,6 @@ Managed by npm/yarn/pnpm based on `package.json`
 
 ### Resources
 
-- [Coding Standards](/Users/weverson/GroDigital/smartfeed_admin_ui/docs/architecture/coding-standards.md)
-- [Tech Stack](/Users/weverson/GroDigital/smartfeed_admin_ui/docs/architecture/tech-stack.md)
-- [Frontend README](/Users/weverson/GroDigital/smartfeed_admin_ui/docs/frontend/README.md)
+- [Coding Standards](/Users/weverson/GroDigital/smartnews_admin_ui/docs/architecture/coding-standards.md)
+- [Tech Stack](/Users/weverson/GroDigital/smartnews_admin_ui/docs/architecture/tech-stack.md)
+- [Frontend README](/Users/weverson/GroDigital/smartnews_admin_ui/docs/frontend/README.md)
