@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.65rem;
+    /* Primary Blue #2196F3 */
+    --primary: oklch(0.65 0.17 245);
+    --primary-foreground: oklch(1 0 0);
+
+    /* Secondary Orange #FF9800 */
+    --secondary: oklch(0.75 0.18 55);
+    --secondary-foreground: oklch(1 0 0);
+
+    /* Background White #FFFFFF */
+    --background: oklch(1 0 0);
+
+    /* Text/Icons Dark Grey #424242 */
+    --foreground: oklch(0.35 0.01 0);
+
+    /* Card backgrounds - white with subtle elevation */
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.35 0.01 0);
+
+    /* Popover - white background */
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.35 0.01 0);
+
+    /* Neutral Grey #BDBDBD for muted elements */
+    --muted: oklch(0.8 0.01 0);
+    --muted-foreground: oklch(0.55 0.01 0);
+
+    /* Accent - using orange */
+    --accent: oklch(0.75 0.18 55);
+    --accent-foreground: oklch(1 0 0);
+
+    /* Destructive - red tone */
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(1 0 0);
+
+    /* Border - lighter grey */
+    --border: oklch(0.9 0.005 0);
+    --input: oklch(0.9 0.005 0);
+
+    /* Ring - primary blue */
+    --ring: oklch(0.65 0.17 245);
+
+    /* Chart colors - varied palette */
+    --chart-1: oklch(0.72 0.15 240);
+    --chart-2: oklch(0.75 0.18 55);
+    --chart-3: oklch(0.65 0.12 160);
+    --chart-4: oklch(0.7 0.14 120);
+    --chart-5: oklch(0.75 0.16 300);
+
+    /* Sidebar - white background */
+    --sidebar: oklch(1 0 0);
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 98%;
+  }
+
+  .dark {
+    /* Dark background */
+    --background: oklch(0.15 0.01 0);
+    --foreground: oklch(0.95 0 0);
+
+    /* Primary Blue - brighter for dark mode */
+    --primary: oklch(0.75 0.15 240);
+    --primary-foreground: oklch(0.15 0.01 0);
+
+    /* Secondary Orange - slightly adjusted for dark mode */
+    --secondary: oklch(0.78 0.18 55);
+    --secondary-foreground: oklch(0.15 0.01 0);
+
+    /* Card - dark elevated surface */
+    --card: oklch(0.2 0.01 0);
+    --card-foreground: oklch(0.95 0 0);
+
+    /* Popover - dark elevated surface */
+    --popover: oklch(0.2 0.01 0);
+    --popover-foreground: oklch(0.95 0 0);
+
+    /* Muted - darker grey */
+    --muted: oklch(0.25 0.01 0);
+    --muted-foreground: oklch(0.65 0.01 0);
+
+    /* Accent - orange */
+    --accent: oklch(0.78 0.18 55);
+    --accent-foreground: oklch(0.15 0.01 0);
+
+    /* Destructive - red tone */
+    --destructive: oklch(0.704 0.191 22.216);
+    --destructive-foreground: oklch(0.15 0.01 0);
+
+    /* Border - subtle in dark mode */
+    --border: oklch(0.3 0.01 0);
+    --input: oklch(0.3 0.01 0);
+
+    /* Ring - primary blue */
+    --ring: oklch(0.75 0.15 240);
+
+    /* Chart colors - adjusted for dark mode */
+    --chart-1: oklch(0.75 0.15 240);
+    --chart-2: oklch(0.78 0.18 55);
+    --chart-3: oklch(0.7 0.12 160);
+    --chart-4: oklch(0.75 0.14 120);
+    --chart-5: oklch(0.78 0.16 300);
+
+    /* Sidebar - dark surface */
+    --sidebar: oklch(0.18 0.01 0);
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 240 5.9% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Remove focus ring from cmdk inputs */
+[cmdk-input]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove default focus outline from slider thumb */
+[role="slider"]:focus {
+  outline: none !important;
+}
+
+[role="slider"]::before,
+[role="slider"]::after {
+  display: none !important;
+}
+
+@layer utilities {
+  .animate-count-up {
+    animation: countUp 1.5s ease-out;
+  }
+
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
