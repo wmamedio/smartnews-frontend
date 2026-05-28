@@ -1,7 +1,5 @@
 # SmartNews - Content Curation Platform
 
-> **Portfolio Project** - Demonstrating senior-level React/Next.js engineering capabilities
-
 A production-grade content curation and newsletter platform showcasing modern frontend architecture, TypeScript mastery, and enterprise-level React patterns.
 
 ## 🎯 Project Overview
